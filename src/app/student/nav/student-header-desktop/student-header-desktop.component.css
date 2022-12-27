@@ -1,0 +1,9 @@
+.hieght {
+    max-height: 500px;
+    overflow: auto;
+}
+
+.hieght ::-webkit-scrollbar {
+    width: 10px;
+}
+

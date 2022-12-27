@@ -1,0 +1,86 @@
+<div class="page-wrapper">
+    <app-header-mobile></app-header-mobile>
+    <app-menu-sidebar></app-menu-sidebar>
+    <div class="page-container ">
+        <app-header-desktop>
+
+        </app-header-desktop>
+        <div class="main-content ">
+            <div class="section__content section__content--p30 " style="text-align: center;">
+                <div class="container-fluid">
+                    <div class="table-data__tool">
+                        <div class="table-data__tool-left">
+                            <div class="rs-select2--light rs-select2--md mobile-view">
+                                <select class="au-btn-filter custom" name="property">
+                                    <option selected="selected">All Properties</option>
+                                    <option value="">Option 1</option>
+                                    <option value="">Option 2</option>
+                                </select>
+
+                                <div class="dropDownSelect2"></div>
+                            </div>
+                            <div class="rs-select2--light rs-select2--sm">
+                                <button class="au-btn-filter custom" name="time">Export</button>
+
+                                <div class="dropDownSelect2"></div>
+                            </div>
+
+                        </div>
+                        <div class="table-data__tool-right">
+                            <button class="au-btn au-btn-icon au-btn--green au-btn--small" (click)="navigateurl('teacher/new-notification')">
+                                <i class="zmdi zmdi-plus"></i>new notification</button>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <div class="table-responsive table--no-card m-b-30">
+                                <table class="table table-borderless table-striped table-earning">
+                                    <thead>
+                                        <tr>
+                                            <th>Username</th>
+                                            <th>Class</th>
+                                            <th class="text-right">date time</th>
+
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+
+                                        <tr *ngFor="let obj of model">
+
+
+                                            <td>{{obj.username}}</td>
+                                            <td id="{{obj.username}}"></td>
+                                            <td class="text-right">{{obj.date}} {{obj.time}}</td>
+
+
+
+
+
+
+
+                                        </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>

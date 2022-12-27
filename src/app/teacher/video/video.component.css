@@ -1,0 +1,13 @@
+.text-center h1 {
+    text-align: center;
+    left: 50%;
+}
+
+.image_us {
+    width: 100px;
+}
+
+a {
+    cursor: pointer;
+    color: #007bff!important;
+}

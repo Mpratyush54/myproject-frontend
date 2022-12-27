@@ -1,0 +1,56 @@
+<div class="page-wrapper">
+    <app-header-mobile></app-header-mobile>
+    <app-menu-sidebar></app-menu-sidebar>
+    <div class="page-container ">
+        <app-header-desktop>
+
+        </app-header-desktop>
+        <div class="main-content ">
+
+            <h1 class="center">Create a stream</h1>
+            <button class="btn btn-primary btn-sm" (click)="set_true()">Click here to start a new stream</button>
+
+            <form class="form-horizontal form-setting" #note_upload="ngForm" (ngSubmit)="create_stream(note_upload.value)" *ngIf="new_sterm">
+
+
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="text-input" class=" form-control-label">Title</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input type="text" id="Title" name="Title" placeholder="Title" class="form-control" required ngModel
+                            #Title="ngModel" [class.is-invalid]="Title.invalid && Title.touched">
+    
+                        <small class="help-block form-text">Please enter Title</small>
+                    </div>
+                </div>
+            
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="select" class=" form-control-label">Select Class</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+    
+                        <select name="class" id="select" class="form-control" required ngModel #name4="ngModel"
+                            [class.is-invalid]="name4.invalid && name4.touched">
+                            <option selected [ngValue]="null">Please select</option>
+                            <option *ngFor="let classs of class" value="{{classs.value}}">{{classs.eritten}}</option>
+    
+                        </select>
+    
+                    </div>
+                </div>
+              
+                <div class="card-footer ">
+                    <button type="submit" name="submit" class="btn btn-primary btn-sm" [disabled]="note_upload.invalid">
+    
+                        <!-- <button type="submit" name="submit" class="btn btn-primary btn-sm" [disabled]="note_upload.invalid"> -->
+                        <i class="fa fa-dot-circle-o "></i> Submit
+                    </button>
+             
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

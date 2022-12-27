@@ -1,0 +1,120 @@
+<div class="page-wrapper">
+    <app-header-mobile></app-header-mobile>
+    <app-menu-sidebar></app-menu-sidebar>
+    <div class="page-container ">
+        <app-header-desktop>
+
+        </app-header-desktop>
+        <div class="main-content ">
+            <div class="section__content section__content--p30 " style="text-align: center;">
+                <div class="container-fluid ">
+
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Upload a new video</h4>
+                            </div>
+                            <div class="card-body">
+                                <p class="text-muted m-b-15">Click here top Upload a new video</p>
+
+                                <ul class="list-inline">
+                                    <li>
+                                        <div class="center">
+                                            <a (click)="navigate('/teacher/video-upload')" style="text-align: center;">Click Here</a>
+                                        </div>
+
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div>
+                        <h1 class="" style="text-align: center;"> {{meassage}}</h1>
+                    </div>
+                    <div class="container-fluid" *ngIf="meassagenot">
+                        <div class="row">
+                            <div class="col-lg-9">
+                                <div class="table-responsive table--no-card m-b-30">
+                                    <table class="table table-borderless table-striped table-earning">
+                                        <thead>
+                                            <tr>
+                                                <th>video ID</th>
+                                                <th>Class</th>
+                                                <th>title</th>
+                                                <th class="text-right">date</th>
+                                                <th class="text-right">process</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+
+                                            <tr *ngFor="let obj of model">
+
+
+                                                <td>{{obj.id}}</td>
+                                                <td>{{obj.class}}</td>
+                                                <td>{{obj.title}}</td>
+                                                <td class="text-right">{{obj.time}}</td>
+
+                                                <td class="text-right display_texts" id="display_texts" style="display:none;">Not Processed</td>
+                                                <td class="text-right display_button" id="display_button">
+
+
+
+
+
+                                                    <button type="submit" class="btn btn-primary" (click)="onSubmit(obj.id)">Process</button>
+
+                                            </tr>
+
+
+
+
+
+
+
+                                            <tr *ngFor="let obj2 of model2">
+                                                <td>
+                                                    <a (click)="playvideo(obj2.id)" class="image_us">
+                                                        <img src="{{image_url}}{{obj2.id}}" alt="Thumnail">
+
+                                                    </a>
+
+                                                </td>
+
+                                                <td>{{obj2.class}}</td>
+                                                <td>{{obj2.title}}</td>
+                                                <td class="text-right">{{obj2.time}}</td>
+
+
+                                                <td class="text-right" id="display_button">
+
+
+
+                                                    <button type="submit" class="btn btn-danger" (click)="playvideo(obj2.id)">Play Video</button>
+
+
+                                                </td>
+
+                                            </tr>
+
+
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

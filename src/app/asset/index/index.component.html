@@ -1,0 +1,48 @@
+<div class="card-body align-middle ss">
+    <app-desktop></app-desktop>
+</div>
+
+<div class="jumbotron">
+    <h1 class="display-4">Hello, visitors!</h1>
+    <p class="lead">This is a Cms Website</p>
+    <hr class="my-4">
+    <p>It uses uses javascript , typescript , html , css</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" (click)="navigate('/login')" role="button">Click Here to login</a>
+    </p>
+</div>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<footer>
+    <div class="bottoms bottom-fixed">
+        <div class="center">
+            <span class="credit">Created By <a href="">Pratyush Mishra</a> | </span>
+            <span class="far fa-copyright"></span><span> 2020 All rights reserved.</span>
+        </div>
+    </div>
+</footer>
+<style>
+    .center {
+        text-align: center;
+    }
+    
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+    .bottoms {
+        top: 0;
+        background: rgb(240, 240, 240);
+    }
+    
+    .bottoms center {
+        padding: 5px;
+        font-size: 0.9375rem;
+        /* background: #151515; */
+    }
+    
+    .bottoms center a {
+        color: #f12020;
+        text-decoration: none;
+    }
+    
+    .bottoms center a:hover {
+        text-decoration: underline;
+    }
+</style>
