@@ -1,0 +1,23 @@
+.center {
+    text-align: center;
+}
+
+.text {
+    font-size: 38px;
+    text-align: left;
+    background-color: white;
+    min-width: 70%;
+    min-height: 80%;
+    line-height: 40px;
+    white-space: normal;
+}
+
+.details {
+    text-align: left;
+    margin: 20px;
+}
+
+p {
+    white-space: normal;
+    margin-top: 10px!important;
+}

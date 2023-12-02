@@ -1,0 +1,230 @@
+*{
+    word-wrap: break-word;
+}
+
+.title_p{
+    margin: 0;
+}
+/* @media (min-width:990px) { */
+    
+    .plyr--full-ui {
+        width: 20%!important;
+    
+    }
+    
+    .plyr__controls__item {
+        display: none;
+    }
+    
+    .title  {
+        text-align: center;
+    width: 100%;
+    margin-top: 4%;
+    margin-left: 3%;
+    
+    }
+    .vid-bg{
+        background-color: #FBFCF8;
+    }
+    
+    .video-main{
+margin-right: 10px;
+        margin: 10px;
+        justify-content: center;
+    display: flex;
+    /* margin: 10px; */
+    align-items: center;
+        padding-top: 15px;
+    }
+    .content{
+       float: right;
+       width: 41%;
+    
+    }
+
+    .title_h1{
+    padding: 0;
+    margin: 0;
+    }
+
+    
+    .text {
+        width: 80%;
+    }
+    .copy {
+        margin-left: 8px;
+        
+    }
+    
+    .lower {
+        padding-top: 10px;
+        cursor: pointer;
+    }
+    
+    .pointer {
+        cursor: pointer;
+    }
+    
+    .chat {
+        background-color: #f8f8f8;
+        height: 600px;
+        bottom: 0;
+        overflow: hidden;
+        overflow-y: visible;
+        
+    }
+    .mes-msgtext-center{
+    
+        text-align: center;    
+            margin-right: 10px!important;
+            font-weight: 800;
+            font-size: 14px;
+            margin-bottom: 3px;
+        
+        
+}
+    .mes-msgtext-right{
+    
+            text-align: right;    
+                margin-right: 10px!important;
+                font-weight: 800;
+                font-size: 14px;
+                margin-bottom: 3px;
+            
+            
+    }
+    .msg-by-other {
+        left: 0px;
+        background-color: #ffd000;
+        width: fit-content;
+        padding: 5px 10px 5px 10px;
+        max-width: 90%;
+        border-radius: 0 8px 8px 0;
+        margin-bottom: 4px;
+        margin-top: 4px;
+    }
+    
+    .msg-by-me {
+        right: 0;
+        background-color: #ffffff;
+        float: right;
+        padding: 5px 10px 5px 22px;
+        border-radius:  8px 0 0 8px ;
+        margin-bottom: 4px;
+    line-height: 18px;
+    width: 90%;
+    }
+    
+    .msg{
+    width: 84%;
+    float: left;
+    }
+    .buttonss{
+       width: 16%;
+       float: right;
+    }
+    .buttons{
+        width: 100%;
+        margin-bottom: 3px;
+    }
+    .mes-msgtext{
+        font-weight: 800;
+        font-size: 14px;
+        margin-bottom: 3px;
+    
+    }
+    .buttonddd{
+        margin-left: 10px;
+        height: 16px;
+        font-size: 12px;
+        padding: 0;
+    }
+
+    .golive-btn{
+        float: right; 
+    }
+.rowsss{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+    @media (max-width:1440px) {
+        
+        .golive-btn {
+            float: right;
+            margin-right: 10%;
+        }
+    }
+    @media (max-width:725px) {
+        .chat{
+            margin-top:20px;
+        }
+        .uppper{
+            width: 90%;
+        }
+        .title{
+            margin-top: 4%;
+        }
+        .chat{
+            height: 300px;
+        }
+        .col-6 , .col-2 , .col-4{
+            width: 100%!important;
+            max-width: 100%!important;
+        }
+
+        .rowsss{
+            display: block!important;
+        }
+    }
+
+    .text-head{
+        margin-top: 45px;
+    }
+    .text-head>p, .text-head>h1{
+        margin: 0;
+        padding: 0;
+
+    }
+    /* 
+}
+
+@media (max-width:320px) {
+
+    .plyr--full-ui {
+        width: 320px!important;
+    margin-top: 0px;
+    }
+    .video{
+        width: 320px!important;
+   
+    }
+ .btns{
+    content: ' ';
+    width: 100%;
+ }
+.chat{
+    width: 100%;
+    
+}
+.title{
+    width: 100%;
+    margin-left: 19px;
+}
+.uppper{
+    margin-bottom: 4px;
+}
+.video-elem-main{
+    width: 320px;
+}
+.golive-btn{
+    float: right;
+font-size: 12px;
+text-align: right;
+margin-bottom: 2px;
+
+}
+
+} */

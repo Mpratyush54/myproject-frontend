@@ -1,0 +1,53 @@
+@media only screen and (min-width: 992px) {
+    .custom {
+        height: 35px;
+        border: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        position: absolute !important;
+    }
+    .custom1 {
+        height: 35px;
+        border: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        position: absolute !important;
+    }
+    .custom2 {
+        height: 35px;
+        border: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        position: absolute !important;
+        background: #555;
+        color: #ffffff;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .custom {
+        top: 15px;
+        height: 35px;
+    }
+    .custom1 {
+        height: 35px;
+        border: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        position: absolute !important;
+    }
+    .custom2 {
+        height: 35px;
+        border: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        position: absolute !important;
+        background: #555;
+        color: #ffffff;
+    }
+}
