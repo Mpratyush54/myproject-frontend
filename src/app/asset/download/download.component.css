@@ -1,0 +1,105 @@
+.heading {
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 40px;
+    font-weight: 100;
+    font-family: "Segoe UI", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+}
+
+.center {
+    max-height: 377.34px;
+    margin-top: 200px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+.download-windows {
+    margin-left: 70px;
+    max-width: 290px;
+    max-width: 271.5px;
+}
+
+.windows-logo {
+    width: 240px;
+    background: url('../../../assets/images/windows-logo.png') center center no-repeat;
+    height: 100px;
+    background-size: contain !important;
+    margin: 3px auto;
+}
+
+.button-download {
+    font-weight: 500;
+    color: #ffff;
+    width: 240px;
+    background-color: #0066b8;
+    padding: 10px 0;
+    margin: 20px 0 5px;
+    width: 100%;
+}
+
+.button-download:hover {
+    background-color: #005ba4;
+}
+
+.download-img {
+    position: relative;
+    top: -2px;
+    margin-right: 10px;
+    display: inline;
+    vertical-align: middle;
+    width: 18px;
+    aspect-ratio: auto 18 / 18;
+}
+
+.small-windows {
+    margin-top: -4px;
+}
+
+.logo-winodws {
+    margin-bottom: 2px;
+    font-size: 20px;
+}
+
+.windows-downlod {
+    margin-top: 16px;
+    margin-left: 19px;
+    margin-right: auto;
+    width: 94%;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+    border: .1px;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+.button-download-disabled {
+    font-weight: 500;
+    color: #ffff;
+    width: 240px;
+    background-color: #0066b8;
+    padding: 10px 0;
+    margin: 20px 0 5px;
+    width: 100%;
+}
+
+.button-download-disabled:hover {
+    -webkit-animation-delay: 4s;
+    animation-delay: 4s;
+    animation: ease-in-out 6s;
+    background-color: #bac1c7;
+}
