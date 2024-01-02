@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpEventType } from '@angular/common/http';
-import { from, Observable, throwError } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
-import 'rxjs/add/observable/throw';
+
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { StogageService } from 'src/app/services/stogage.service';
 import { io } from 'socket.io-client';
 import { data } from 'jquery';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map, retry } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -53,7 +53,7 @@ console.log(data);
         if (error.message == `Http failure response for ${url}: 0 Unknown Error`) {
           return
         } else {
-          return Observable.throw(error.message || "Server Error")
+          return throwError(error.message || "Server Error")
         }
       }))
   }
@@ -90,7 +90,7 @@ console.log(data);
         if (error.message == `Http failure response for ${url}: 0 Unknown Error`) {
           return
         } else {
-          return Observable.throw(error.message || "Server Error")
+          return throwError(error.message || "Server Error")
         }
       }))
   }
@@ -199,7 +199,7 @@ return data
         if (error.message == `Http failure response for ${url}: 0 Unknown Error`) {
           return
         } else {
-          return Observable.throw(error.message || "Server Error")
+          return throwError(error.message || "Server Error")
         }
       }))
   }

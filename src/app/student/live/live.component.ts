@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PlyrComponent } from 'ngx-plyr';
+// import { PlyrComponent } from 'ngx-plyr';
 import { SimplebarAngularModule } from 'simplebar-angular';
 
 import { HlsjsPlyrDriver } from '../video/play-setup/play-setup.component'

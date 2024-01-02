@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpEventType } from '@angular/common/http';
-import { from, Observable, throwError } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
-import 'rxjs/add/observable/throw';
+
+import { Observable, throwError } from 'rxjs';
+import { catchError, map, retry } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { StogageService } from 'src/app/services/stogage.service';
@@ -53,7 +53,7 @@ export class LiveService {
         if (error.message == `Http failure response for ${url}: 0 Unknown Error`) {
           return
         } else {
-          return Observable.throw(error.message || "Server Error")
+          return throwError(error.message || "Server Error")
         }
       }))
   }
@@ -88,7 +88,7 @@ export class LiveService {
         if (error.message == `Http failure response for ${url}: 0 Unknown Error`) {
           return
         } else {
-          return Observable.throw(error.message || "Server Error")
+          return throwError(error.message || "Server Error")
         }
       }))
   }
@@ -203,7 +203,7 @@ return data
         if (error.message == `Http failure response for ${url}: 0 Unknown Error`) {
           return
         } else {
-          return Observable.throw(error.message || "Server Error")
+          return throwError(error.message || "Server Error")
         }
       }))
   }

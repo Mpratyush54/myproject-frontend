@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient , HttpEventType } from '@angular/common/http';
-import * as Rx from "rxjs/Rx";
-import { from, Observable, throwError } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
-import  * as $  from 'jquery'
+import { Observable, throwError } from 'rxjs';
+import { catchError, map, retry } from 'rxjs/operators';
 import { Router  } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { StogageService } from 'src/app/services/stogage.service';
@@ -35,8 +33,8 @@ export class UploadVideoService {
 
         
         if(data.type === HttpEventType.UploadProgress ){
-    let value =Math.round(data.loaded / data.total * 100  )+'%'
- 
+    let value =Math.round(data.loaded / data.total * 100  )+'%';
+ console.log(value);
         // document.getElementById('progressbarvideo').style.width=`${value}`
         
        

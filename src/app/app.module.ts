@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { AngularFileUploaderModule } from "angular-file-uploader";
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { ServiceWorkerModule, SwUpdate } from '@angular/service-worker'; 
 import { SimplebarAngularModule } from 'simplebar-angular';
 import { pdfDefaultOptions } from 'ngx-extended-pdf-viewer';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
-import { PlyrModule } from 'ngx-plyr';
 
 
 
@@ -53,6 +51,7 @@ import { IndexComponentnotes } from './student/notes/index/index.component';
 import { NotesindvidualComponent } from './student/notes/notesindvidual/notesindvidual.component';
 import { IndexComponentStudent } from './teacher/studentadd/index/index.component';
 import { EditstudentComponent } from './teacher/studentadd/editstudent/editstudent.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -69,6 +68,8 @@ import { ResetComponent } from './asset/forgot-password/reset/reset.component';
 import { LiveComponent } from './student/live/live.component';
 import { LiveJoinComponent } from './student/live/live-join/live-join.component';
 
+
+import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource,NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -117,10 +118,11 @@ import { LiveJoinComponent } from './student/live/live-join/live-join.component'
     NgbdModalContent,
     LiveComponent,
     LiveJoinComponent,
+    
   ],
   imports: [
+    CKEditorModule,
     MatFormFieldModule,
-    PlyrModule,
     MatProgressSpinnerModule,
 BrowserAnimationsModule,
 MatProgressBarModule,
@@ -130,8 +132,7 @@ MatProgressBarModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AngularFileUploaderModule,
-    CKEditorModule,
+    NgbCarousel,NgbPaginationModule,
     SimplebarAngularModule,
     NgxExtendedPdfViewerModule,
     ServiceWorkerModule.register('ngsw-worker.js', {

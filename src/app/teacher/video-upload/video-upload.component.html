@@ -79,7 +79,7 @@
                                         </div>
                                         <div class="col-12 col-md-9">
                                             <select name="class" id="select" class="form-control" required ngModel #name4="ngModel" [class.is-invalid]="name4.invalid && name4.touched">
-                                                <option selected  [ngValue] ="null">Please select</option>
+                                                <option selected >Please select</option>
                                                 <option *ngFor="let classs of class" value="{{classs.value}}">{{classs.eritten}}</option>
                                                 
                                             </select>

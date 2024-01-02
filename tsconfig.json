@@ -3,7 +3,9 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
+    "outDir": "./dist/out-tsc","skipLibCheck":true,
+    
+
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": false,
     "noFallthroughCasesInSwitch": true,
@@ -13,12 +15,15 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2015",
-    "module": "es2020",
+    "target": "es2018",
+    "module": "ES2015",
     "lib": [
-      "es2018",
+      "ES2018",
+      
       "dom"
-    ]
+    ],
+    "resolveJsonModule": true,
+    "strict": false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

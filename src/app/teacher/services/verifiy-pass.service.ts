@@ -2,9 +2,8 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient , HttpEventType } from '@angular/common/http';
-import * as Rx from "rxjs/Rx";
-import { from, Observable, throwError } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map, retry } from 'rxjs/operators';
 import  * as $  from 'jquery'
 import { Router  } from '@angular/router';
 import { environment } from '../../../environments/environment';

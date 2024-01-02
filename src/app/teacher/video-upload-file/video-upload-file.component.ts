@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Routes } from '@angular/router';
 import { UploadThumnailService } from '../services/upload-thumnail.service';
 import { UploadVideoService } from '../services/upload-video.service';
-import { NullVisitor } from '@angular/compiler/src/render3/r3_ast';
 import { VerifiyPassService } from '../services/verifiy-pass.service';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 

@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  baseurl:"http://192.168.1.8/api/",
-  soket_url:"http://192.168.1.8/",
-  live_url:"http://192.168.1.8:8000/live/"
+  baseurl:"http://localhost/api/",
+  soket_url:"http://localhost/",
+  live_url:"http://localhost:8000/live/"
 };
 
 /*

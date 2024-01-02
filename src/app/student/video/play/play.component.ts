@@ -2,7 +2,7 @@ import { Component, OnInit ,ElementRef, Input, OnDestroy,ViewChild, ViewEncapsul
 import { environment } from '../../../../environments/environment';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { PlyrComponent } from 'ngx-plyr';
+// import { PlyrComponent } from 'ngx-plyr';
 import { SimplebarAngularModule } from 'simplebar-angular';
 
 import{HlsjsPlyrDriver} from './../play-setup/play-setup.component'

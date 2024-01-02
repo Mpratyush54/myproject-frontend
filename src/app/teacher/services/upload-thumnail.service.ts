@@ -1,16 +1,12 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient ,HttpErrorResponse,HttpEventType } from '@angular/common/http';
-import * as Rx from "rxjs/Rx";
-import { from, Observable, throwError } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
-import  'rxjs/add/observable/throw';
-import  * as $  from 'jquery'
+import { Observable, throwError } from 'rxjs';
+import { catchError, map, retry } from 'rxjs/operators';
 import { Router  } from '@angular/router';
 import { event } from 'jquery';
 import { environment } from '../../../environments/environment';
 import { StogageService } from 'src/app/services/stogage.service';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -58,7 +54,7 @@ if(error.message == `Http failure response for ${url}: 0 Unknown Error`){
 return this.json
   
 }else{
-  return Observable.throw(error.message || "Server Error")
+  return throwError(error.message || "Server Error")
     
 
 }

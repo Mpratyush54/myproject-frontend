@@ -1,4 +1,4 @@
-<router-outlet>
+ <router-outlet>
     <div class="loader2" *ngIf="loaderservice.Isloading | async">
 
         <mat-spinner style="top:50%;left:50%;"> </mat-spinner>
@@ -16,6 +16,4 @@
         <h1 style="top:50%;left:50%;"> Please Wait</h1>
     </div>
 
-</router-outlet>
-
-<!-- <div mat-card-image plyr [plyrPlaysInline]="true" [plyrCrossOrigin]="true" [plyrDriver]="hlsjsDriver1" [plyrOptions]="options" [plyrSources]="sources" [plyrPoster]="poster" (plyrInit)="plyr1 = $event" (plyrLanguageChange)="languageChanged(hlsjsDriver1, plyr1)"></div> -->
+</router-outlet> 

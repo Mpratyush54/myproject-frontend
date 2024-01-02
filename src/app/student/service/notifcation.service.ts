@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient ,HttpEventType } from '@angular/common/http';
-import { map, catchError } from 'rxjs/operators';
-import  'rxjs/add/observable/throw';
+
 import { environment } from '../../../environments/environment';
 import { StogageService } from 'src/app/services/stogage.service';
 import { DeviceDetectorService ,DeviceInfo} from 'ngx-device-detector';
-
+import { Observable, throwError } from 'rxjs';
+import { catchError, map, retry } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })

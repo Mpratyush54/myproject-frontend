@@ -4,7 +4,6 @@ import {  Router } from '@angular/router';
 import videojs from 'video.js';
 import "@videojs/http-streaming";
 
-import  * as $  from 'jquery';
 
 
 
@@ -23,7 +22,7 @@ export class VideoPlayComponent implements OnInit, OnDestroy {
 
   @ViewChild('target', {static: true}) target: ElementRef;
 
-  player: videojs.Player;
+  player: typeof videojs.players;
 
 
   @Input() options: {

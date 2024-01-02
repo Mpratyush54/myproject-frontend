@@ -1,8 +1,8 @@
 import  Hls from 'hls.js';
-import { PlyrDriver, PlyrDriverCreateParams, PlyrDriverDestroyParams, PlyrDriverUpdateSourceParams } from 'ngx-plyr';
+// import { PlyrDriver, PlyrDriverCreateParams, PlyrDriverDestroyParams, PlyrDriverUpdateSourceParams } from 'ngx-plyr';
 import * as Plyr from 'plyr';
 
-export class HlsjsPlyrDriver implements PlyrDriver {
+export class HlsjsPlyrDriver  {
 
   hls = new Hls();
 
@@ -10,21 +10,21 @@ export class HlsjsPlyrDriver implements PlyrDriver {
 
   constructor(private autoload: boolean) { }
 
-  create(params: PlyrDriverCreateParams) {
-    this.hls.attachMedia(params.videoElement);
-console.log(params.options);
+//   create(params: PlyrDriverCreateParams) {
+//     this.hls.attachMedia(params.videoElement);
+// console.log(params.options);
 
-    return new Plyr(params.videoElement, params.options);
-  }
+//     return new Plyr(params.videoElement, params.options);
+//   }
 
-  updateSource(params: PlyrDriverUpdateSourceParams) {
-    if (this.autoload) {
-      this.load(params.source.sources[0].src);
-    } else {
-      // poster does not work with autoload
-      params.videoElement.poster = params.source.poster;
-    }
-  }
+  // updateSource(params: PlyrDriverUpdateSourceParams) {
+  //   if (this.autoload) {
+  //     this.load(params.source.sources[0].src);
+  //   } else {
+  //     // poster does not work with autoload
+  //     params.videoElement.poster = params.source.poster;
+  //   }
+  // }
 
 // this.hls
     // const defaultOptions = {
@@ -34,11 +34,11 @@ console.log(params.options);
     // };
 
 
-  destroy(params: PlyrDriverDestroyParams) {
-    params.plyr.destroy();
-    this.hls.detachMedia();
-    this.hls.destroy();
-  }
+  // destroy(params: PlyrDriverDestroyParams) {
+  //   params.plyr.destroy();
+  //   this.hls.detachMedia();
+  //   this.hls.destroy();
+  // }
 
   load(src: string) {
     if (!this.loaded) {

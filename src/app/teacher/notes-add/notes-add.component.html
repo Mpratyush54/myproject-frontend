@@ -22,7 +22,7 @@
                                             <label for="text-input" class=" form-control-label">Title</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <input type="text" id="Title" name="Title" placeholder="Title" class="form-control" required (ngModel) #Title="ngModel" [class.is-invalid]="Title.invalid && Title.touched">
+                                            <input type="text" id="Title" name="Title" placeholder="Title" class="form-control" required ngModel #Title="ngModel" [class.is-invalid]="Title.invalid && Title.touched">
 
                                             <small class="help-block form-text">Please enter Title</small>
                                         </div>
@@ -102,7 +102,7 @@
                                             <label for="textarea-input" class=" form-control-label">Textarea</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <ckeditor [editor]="editor" aria-placeholder="Type the text here" ngModel #text="ngModel" [class.is-invalid]="text.invalid && text.touched " name="text"></ckeditor>
+                                            <ckeditor   aria-placeholder="Type the text here" ngModel #text="ngModel" [class.is-invalid]="text.invalid && text.touched " name="text"></ckeditor>
 
                                             <!-- <quill-editor [style]="editorstyle" [modules]="QuillConfiguration"></quill-editor> -->
 
