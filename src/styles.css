@@ -13,3 +13,5 @@
 .plyr__progress__container , .plyr__time{
 display: none;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
