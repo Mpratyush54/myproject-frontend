@@ -1,0 +1,8 @@
+{
+  "appId": "com.pratyush.com",
+  "appName": "Pratyush",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}

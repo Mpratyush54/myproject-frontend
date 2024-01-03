@@ -1,0 +1,25 @@
+.center {
+    left: 50%;
+    transform: translateY(-50%, -50%);
+}
+
+
+/* .ng-invalid {
+    border-color: red;
+} */
+
+.has-error {
+    border-color: red;
+    color: red;
+}
+
+.button-style {
+    border: none;
+    width: 15px;
+    margin-right: 10px;
+    font-size: large;
+}
+
+.button-style-2 {
+    font-size: large;
+}
