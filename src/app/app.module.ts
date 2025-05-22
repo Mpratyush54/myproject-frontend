@@ -5,12 +5,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { ServiceWorkerModule, SwUpdate } from '@angular/service-worker'; 
 import { SimplebarAngularModule } from 'simplebar-angular';
 import { pdfDefaultOptions } from 'ngx-extended-pdf-viewer';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 
+    import { MatIconModule } from '@angular/material/icon';
 
 
 import {FormsModule , ReactiveFormsModule}from '@angular/forms';
@@ -121,6 +123,7 @@ import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource,NgbPaginationModule } f
     
   ],
   imports: [
+    FontAwesomeModule,
     CKEditorModule,
     MatFormFieldModule,
     MatProgressSpinnerModule,
@@ -135,6 +138,7 @@ MatProgressBarModule,
     NgbCarousel,NgbPaginationModule,
     SimplebarAngularModule,
     NgxExtendedPdfViewerModule,
+    MatIconModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable

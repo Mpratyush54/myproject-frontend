@@ -10,15 +10,177 @@
             <div class="container-fluid">
                 <div class="rowsss  align-items-start">
                     <div class="col-6">
-                        <div *ngIf="sources">
+                        <div>
                             <div>
 
                                 <!-- <div style="width: 100%;" mat-card-image plyr [plyrPlaysInline]="true"
                                     [plyrCrossOrigin]="true" [plyrDriver]="hlsjsDriver2" [plyrOptions]="options"
                                     [plyrSources]="sources" [plyrPoster]="poster" (plyrInit)="plyr1 = $event"
-                                    (plyrLanguageChange)="languageChanged(hlsjsDriver2, plyr1)" autoplay class=""></div>
+                                    (plyrLanguageChange)="languageChanged(hlsjsDriver2, plyr1)" autoplay class=""></div> -->
+                                <div class="container " #videoWrapper (click)="handleClick($event)"
+                                    (dblclick)="handleDoubleClick($event)" (mousedown)="handleHoldStart($event)"
+                                    (mouseup)="handleHoldEnd($event)" (mouseleave)="handleHoldEnd($event)" tabindex="0"
+                                    (keydown)="handleKeydown($event)" [class.show-controls]="showControls"
+                                    (touchstart)="onHoldStart()" (touchend)="onHoldEnd()">
+                                    <div class="headsection">
+                                        <div class="background-headsection">
 
-                            </div> -->
+
+                                            <div class="title">{{title}}</div>
+
+                                            <ul class="list-vertical">
+                                                <li class="Chapter">
+                                                    <p class="head-Chapter">Chapter:</p>
+                                                    Gravitaion
+                                                </li>
+                                                <li class="subject">
+                                                    <p class="head-Chapter">Subject:</p>
+                                                    Physics
+                                                </li>
+
+                                                <li class="date">
+                                                    <p class="head-Chapter">Date:</p>
+                                                    3/02/2023
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="troggle"></div>
+
+                                    <img src="./Dash/img/image_001.jpg" alt="" class="video-thumnail">
+
+                                    <div class="wrapper">
+                                        <div class="background-wrapper">
+
+                                            <div class="video-timeline" (click)="seekFromClick($event)">
+                                                <div class="progress-area">
+                                                    <span style="left: 95px">
+                                                        <div class="image-thumnail">
+                                                            <img src="./Dash/img/image_001.jpg" alt=""
+                                                                id="image-thumnail-img">
+                                                        </div>
+                                                    </span>
+                                                    <div>
+                                                        <div class="progress-bar-loaded"
+                                                            [style.width.%]="bufferedPercent"></div>
+                                                        <div class="progress-bar" [style.width.%]="playedPercent"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <ul class="video-controls">
+                                                <li class="options left">
+                                                    <button class="volume" title="fa-volume-high"
+                                                        (click)="toggleMute()">
+                                                        <fa-icon [icon]="volumeIcon"></fa-icon>
+
+                                                    </button>
+                                                    <input type="range" min="0" max="1" step="0.01" [value]="volume"
+                                                        (input)="setVolume($event)" title="Volume controller" />
+                                                    <div class="video-timer">
+                                                        <p class="current-time">{{currentTimeDisplay}}</p>
+                                                        <p class="separator">/</p>
+                                                        <p class="video-duration">{{durationDisplay}}</p>
+                                                    </div>
+                                                </li>
+                                                <li class="options center">
+                                                    <button class="skip-backward" title="skip-backward"
+                                                        (click)="rewind()">
+                                                        <fa-icon [icon]="faBackward"></fa-icon>
+
+                                                    </button>
+                                                    <button class="play-pause" title="play-pause"
+                                                        (click)="togglePlay()">
+                                                        <fa-icon [icon]="playpauseicon"></fa-icon>
+
+                                                    </button>
+                                                    <button class="skip-forward" title="skip-forward"
+                                                        (click)="forward()">
+                                                        <fa-icon [icon]="faForward"></fa-icon>
+                                                    </button>
+                                                </li>
+                                                <li class="options right">
+                                                    <div class="playback-content">
+                                                        <button class="playback-speed" (click)="displaySpeedSelector()">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                                                                viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                                                                <path
+                                                                    d="M170-228q-38-44-61-98T80-440h82q6 44 22 83.5t42 72.5l-56 56ZM80-520q8-60 30-114t60-98l56 56q-26 33-42 72.5T162-520H80ZM438-82q-60-6-113.5-29T226-170l56-58q35 26 73.5 43t82.5 23v80ZM284-732l-58-58q45-36 98.5-59T440-878v80q-45 6-84 23t-72 43Zm96 432v-360l280 180-280 180ZM520-82v-80q121-17 200.5-107T800-480q0-121-79.5-211T520-798v-80q154 17 257 130t103 268q0 155-103 268T520-82Z" />
+                                                            </svg>
+                                                        </button>
+                                                        <ul class="speed-options" *ngIf="speedcontroller">
+                                                            <li data-speed="2" (click)="setSpeed(2)" [ngClass]="{'active': speed == 2}">2x</li>
+                                                            <li data-speed="1.5" (click)="setSpeed(1.5)" [ngClass]="{'active': speed == 1.5}">1.5x</li>
+                                                            <li data-speed="1" (click)="setSpeed(1)" [ngClass]="{'active': speed == 1}">Normal</li>
+                                                            <li data-speed="0.75" (click)="setSpeed(0.75)" [ngClass]="{'active': speed == 0.75}">0.75x</li>
+                                                            <li data-speed="0.5" (click)="setSpeed(0.5)" [ngClass]="{'active': speed == 0.5}">0.5x</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="quality-selector">
+                                                        <button class="quality-selector-button"
+                                                            (click)="displayQualitySelector()">
+                                                            <svg height="24" viewBox="0 0 24 24" width="24"
+                                                                fill="#e3e3e3">
+                                                                <path
+                                                                    d="M15,17h6v1h-6V17z M11,17H3v1h8v2h1v-2v-1v-2h-1V17z M14,8h1V6V5V3h-1v2H3v1h11V8z            M18,5v1h3V5H18z M6,14h1v-2v-1V9H6v2H3v1 h3V14z M10,12h11v-1H10V12z">
+                                                                </path>
+                                                            </svg>
+                                                        </button>
+                                                        <ul class="quality-options" *ngIf="quality">
+                                                            <li data-speed="4"
+                                                                [ngClass]="{'active': selectedQuality == -1}"
+                                                                (click)="changeQuality(-1)">
+                                                                <button>Auto</button>
+                                                            </li>
+                                                            <li class="quality-options-custom"
+                                                                [ngClass]="{'active': selectedQuality == 3}"
+                                                                (click)="changeQuality(3)">
+                                                                <p class="superior">Full HD</p>
+                                                                <p class="inferor">Upto 1080p</p>
+                                                            </li>
+                                                            <li class="quality-options-custom"
+                                                                [ngClass]="{'active': selectedQuality == 2}"
+                                                                (click)="changeQuality(2)">
+                                                                <p class="superior">HD</p>
+                                                                <p class="inferor">Upto 720p</p>
+                                                            </li>
+                                                            <li class="quality-options-custom"
+                                                                [ngClass]="{'active': selectedQuality == 1}"
+                                                                (click)="changeQuality(1)">
+                                                                <p class="superior">Low</p>
+                                                                <p class="inferor">Data Saver</p>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <button class="pic-in-pic" (click)="pipBtnpress()">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="icon icon-tabler icons-tabler-outline icon-tabler-picture-in-picture">
+                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                            <path
+                                                                d="M11 19h-6a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v4" />
+                                                            <path
+                                                                d="M14 14m0 1a1 1 0 0 1 1 -1h5a1 1 0 0 1 1 1v3a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1z" />
+                                                        </svg>
+                                                    </button>
+                                                    <button class="fullscreen" title="fullscreen"
+                                                        (click)="toggleFullscreen()">
+                                                        <fa-icon [icon]="fullscreeen"></fa-icon>
+
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <video #videoPlayer id="my-video" (loadedmetadata)="onLoadedMetadata()"
+                                        (play)="onPlay()" (timeupdate)="onTimeUpdate()" (pause)="onPause()"
+                                        (ended)="onEnded()"></video>
+
+                                </div>
+
+                            </div>
                             <div class="title">
 
                                 <div class="row uppper ">
@@ -58,24 +220,21 @@
                         </div>
                     </div>
 
-                    <div class="col-2">
-                        <div class="vid-bg">
-                            <div class="btns">
-                                <button type="button" class="btn btn-outline-danger golive-btn" (click)="playedtrue()"
-                                    *ngIf="!live">Go Live</button>
-                                <button type="button" class="btn btn-outline-danger golive-btn" (click)="pausetrue()"
-                                    *ngIf="live">Stop Live</button>
 
-                            </div>
-                        </div>
-                        <div class="text-head">
-                            <p class="teet"> Title</p>
-                            <h1>{{title}}</h1>
-                        </div>
+                    <div class="vid-bg">
+                        <div class="btns">
+                            <button type="button" class="btn btn-outline-danger golive-btn" (click)="playedtrue()"
+                                *ngIf="!live">Go Live</button>
+                            <button type="button" class="btn btn-outline-danger golive-btn" (click)="pausetrue()"
+                                *ngIf="live">Stop Live</button>
 
+                        </div>
                     </div>
+
+
+
                     <div class="col-4">
-                        <div class="chat" #mychatdiv >
+                        <div class="chat" #mychatdiv>
                             <div *ngFor="let item of messagearry">
                                 <p class="mes-msgtext-center"><b>{{item.user}} </b>{{item.message}}</p>
                             </div>
