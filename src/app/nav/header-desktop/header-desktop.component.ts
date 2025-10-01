@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import {  SwPush ,SwUpdate} from '@angular/service-worker';
 
 import  * as $  from 'jquery';
 import { LogoutService } from 'src/app/teacher/services/logout.service';
 import { NotificationService } from 'src/app/teacher/services/notification.service';
-import { Type } from '@angular/core';
 import { StogageService } from 'src/app/services/stogage.service';
 import {LoaderService} from '../../loader/loader.service'
 @Component({
