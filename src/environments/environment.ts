@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  baseurl:"http://localhost/api/",
-  soket_url:"http://localhost/",
+  baseurl:"https://api.pratyushh.online/api/",
+  soket_url:"https://api.pratyushh.online/",
   live_url:"http://localhost:8000/live/"
 };
 
