@@ -6,7 +6,8 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 @Component({
   selector: 'app-pdf-viewer',
   templateUrl: './pdf-viewer.component.html',
-  styleUrls: ['./pdf-viewer.component.css']
+  styleUrls: ['./pdf-viewer.component.css'],
+  standalone:false
 })
 export class PdfViewerComponent implements OnInit {
   @ViewChild('viewer') viewerRef:ElementRef; 

@@ -15,7 +15,8 @@ import { data } from 'jquery';
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
-  styleUrls: ['./create.component.css']
+  styleUrls: ['./create.component.css'],
+  standalone:false
 })
 export class CreateComponent implements OnInit {
   @ViewChild('mychatdiv') mychatdiv

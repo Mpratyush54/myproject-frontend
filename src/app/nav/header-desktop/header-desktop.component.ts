@@ -11,7 +11,8 @@ import {LoaderService} from '../../loader/loader.service'
   selector: 'app-header-desktop',
   templateUrl: './header-desktop.component.html',
   styleUrls: ['./header-desktop.component.css'],
-  providers: [LogoutService]
+  providers: [LogoutService],
+  standalone:false
 
 })
 export class HeaderDesktopComponent implements OnInit {
@@ -158,12 +159,12 @@ showdropdown2() {
                 this.setting3=false
                 this.setting = false
                 this.mobilenavs = true
-                            $('.navbar-mobile').slideToggle('500');
+                            // $('.navbar-mobile').slideToggle('500');
 
                 }
                 else{
                     this.mobilenavs = false
-                    $('.navbar-mobile').slideToggle('500');
+                    // $('.navbar-mobile').slideToggle('500');
 
                 }
 

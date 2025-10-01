@@ -1,4 +1,3 @@
-/// <reference types="@angular/localize" />
 
 import '@angular/localize/init';
 import { enableProdMode } from '@angular/core';

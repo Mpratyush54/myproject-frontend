@@ -44,7 +44,8 @@ export class NgbdModalContent {
 @Component({
   selector: 'app-notes-add',
   templateUrl: './notes-add.component.html',
-  styleUrls: ['./notes-add.component.css']
+  styleUrls: ['./notes-add.component.css'],
+  standalone:false
 })
 export class NotesAddComponent implements OnInit {
   selectedFile = null

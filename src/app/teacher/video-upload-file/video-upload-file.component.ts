@@ -18,7 +18,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
       <p> </p>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark"  (click)="check">Close</button>
+      <button type="button" class="btn btn-outline-dark"  (click)="check()">Close</button>
     </div>
   `
 })
@@ -45,7 +45,8 @@ const chaptername: Alert[] = [ {
 @Component({
   selector: 'app-video-upload-file',
   templateUrl: './video-upload-file.component.html',
-  styleUrls: ['./video-upload-file.component.css']
+  styleUrls: ['./video-upload-file.component.css'],
+  standalone:false
 })
 export class VideoUploadFileComponent implements OnInit {
   alerts: Alert[];

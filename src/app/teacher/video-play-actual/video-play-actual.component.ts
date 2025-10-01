@@ -7,7 +7,8 @@ import { Html5Event } from 'plyr';
 @Component({
   selector: 'app-video-play-actual',
   templateUrl: './video-play-actual.component.html',
-  styleUrls: ['./video-play-actual.component.css']
+  styleUrls: ['./video-play-actual.component.css'],
+  standalone:false
 })
 export class VideoPlayActualComponent implements OnInit, AfterViewInit {
 

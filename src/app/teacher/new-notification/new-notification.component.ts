@@ -17,7 +17,8 @@ import { Router } from '@angular/router';
     <div class="modal-footer">
       <button type="button" class="btn btn-outline-dark" (click)="check()" >Close</button>
     </div>
-  `
+  `,
+  standalone:false
 })
 export class NgbdModalContent {
   @Input() name;
@@ -39,7 +40,8 @@ export class NgbdModalContent {
 @Component({
   selector: 'app-new-notification',
   templateUrl: './new-notification.component.html',
-  styleUrls: ['./new-notification.component.css']
+  styleUrls: ['./new-notification.component.css'],
+  standalone:false
 })
 export class NewNotificationComponent implements OnInit {
 

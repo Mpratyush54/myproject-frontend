@@ -16,7 +16,8 @@ import { data } from 'jquery';
 @Component({
   selector: 'app-live-join',
   templateUrl: './live-join.component.html',
-  styleUrls: ['./live-join.component.css']
+  styleUrls: ['./live-join.component.css'],
+  standalone:false
 })
 export class LiveJoinComponent implements OnInit {
   @ViewChild('mychatdiv') mychatdiv

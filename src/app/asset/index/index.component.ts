@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
   selector: 'app-index',
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.css'],
+  standalone:false
 })
 export class IndexComponents implements OnInit {
  

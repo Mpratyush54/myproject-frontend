@@ -5,7 +5,8 @@ import  * as $  from 'jquery';
 @Component({
   selector: 'app-student-header-mobile',
   templateUrl: './student-header-mobile.component.html',
-  styleUrls: ['./student-header-mobile.component.css']
+  styleUrls: ['./student-header-mobile.component.css'],
+  standalone:false
 })
 export class StudentHeaderMobileComponent implements OnInit {
 
@@ -101,12 +102,12 @@ showdropdown2() {
                 this.setting3=false
                 this.setting = false
                 this.mobilenavs = true
-                            $('.navbar-mobile').slideToggle('500');
+                            // $('.navbar-mobile').slideToggle('500');
 
                 }
                 else{
                     this.mobilenavs = false
-                    $('.navbar-mobile').slideToggle('500');
+                    // $('.navbar-mobile').slideToggle('500');
 
                 }
         

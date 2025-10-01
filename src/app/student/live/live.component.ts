@@ -14,7 +14,8 @@ import{LiveService} from '../service/live.service'
 @Component({
   selector: 'app-live',
   templateUrl: './live.component.html',
-  styleUrls: ['./live.component.css']
+  styleUrls: ['./live.component.css'],
+  standalone:false
 })
 export class LiveComponent implements OnInit {
 

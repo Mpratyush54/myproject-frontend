@@ -43,7 +43,8 @@ export class NgbdModalContent {
 @Component({
   selector: 'app-notes',
   templateUrl: './notes.component.html',
-  styleUrls: ['./notes.component.css']
+  styleUrls: ['./notes.component.css'],
+  standalone:false
 })
 
 export class NotesComponent implements OnInit {

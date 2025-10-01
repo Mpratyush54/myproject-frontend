@@ -6,7 +6,8 @@ import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 @Component({
   selector: 'app-reset',
   templateUrl: './reset.component.html',
-  styleUrls: ['./reset.component.css']
+  styleUrls: ['./reset.component.css'],
+  standalone:false
 })
 export class ResetComponent implements OnInit {
 

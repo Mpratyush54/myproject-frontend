@@ -4,7 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-editstudent',
   templateUrl: './editstudent.component.html',
-  styleUrls: ['./editstudent.component.css']
+  styleUrls: ['./editstudent.component.css'],
+  standalone:false
 })
 export class EditstudentComponent implements OnInit {
 username

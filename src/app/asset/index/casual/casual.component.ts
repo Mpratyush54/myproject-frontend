@@ -5,6 +5,7 @@ import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/n
 @Component({
   selector: 'app-desktop',
   templateUrl: './casual.component.html',
+  standalone:false
 
 })
 export class NgbdCarouselPause {

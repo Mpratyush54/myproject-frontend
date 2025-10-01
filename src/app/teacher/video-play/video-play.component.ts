@@ -16,6 +16,7 @@ import "@videojs/http-streaming";
 `,
   styleUrls: ['./video-play.component.css' ,],
   encapsulation: ViewEncapsulation.None,
+  standalone:false
 
 })
 export class VideoPlayComponent implements OnInit, OnDestroy {

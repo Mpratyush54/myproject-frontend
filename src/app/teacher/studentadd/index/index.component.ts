@@ -5,7 +5,8 @@ import { SignupuserService } from '../../services/signupuser.service';
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
-  styleUrls: ['./index.component.css']
+  styleUrls: ['./index.component.css'],
+  standalone:false
 })
 export class IndexComponentStudent implements OnInit {
 

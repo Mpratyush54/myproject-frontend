@@ -4,7 +4,8 @@ import { SettingsService } from '../service/settings.service';
 @Component({
   selector: 'app-setings',
   templateUrl: './setings.component.html',
-  styleUrls: ['./setings.component.css']
+  styleUrls: ['./setings.component.css'],
+  standalone:false
 })
 export class SetingsComponent implements OnInit {
   textmodel:any

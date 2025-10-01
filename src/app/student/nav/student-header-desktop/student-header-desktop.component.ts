@@ -10,7 +10,8 @@ import { StogageService } from 'src/app/services/stogage.service';
 @Component({
   selector: 'app-student-header-desktop',
   templateUrl: './student-header-desktop.component.html',
-  styleUrls: ['./student-header-desktop.component.css']
+  styleUrls: ['./student-header-desktop.component.css'],
+  standalone:false
 })
 export class StudentHeaderDesktopComponent implements OnInit {
   

@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-four-zero-four',
   templateUrl: './four-zero-four.component.html',
-  styleUrls: ['./four-zero-four.component.css']
+  styleUrls: ['./four-zero-four.component.css'],
+  standalone:false
 })
 export class FourZeroFourComponent implements OnInit {
 

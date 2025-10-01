@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-student-menu-sidebar',
   templateUrl: './student-menu-sidebar.component.html',
-  styleUrls: ['./student-menu-sidebar.component.css']
+  styleUrls: ['./student-menu-sidebar.component.css'],
+  standalone:false
 })
 export class StudentMenuSidebarComponent implements OnInit {
 

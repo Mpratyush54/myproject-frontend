@@ -5,7 +5,8 @@ import { StogageService } from 'src/app/services/stogage.service';
 @Component({
   selector: 'app-index-student',
   templateUrl: './index-student.component.html',
-  styleUrls: ['./index-student.component.css']
+  styleUrls: ['./index-student.component.css'],
+  standalone:false
 })
 export class IndexStudentComponent implements OnInit {
 

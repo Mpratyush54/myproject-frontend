@@ -6,7 +6,8 @@ import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-notesindvidual',
   templateUrl: './notesindvidual.component.html',
-  styleUrls: ['./notesindvidual.component.css']
+  styleUrls: ['./notesindvidual.component.css'],
+  standalone:false
 })
 export class NotesindvidualComponent implements OnInit {
 data

@@ -16,7 +16,8 @@ const chaptername: Alert[] = [ {
 @Component({
   selector: 'app-video-upload',
   templateUrl: './video-upload.component.html',
-  styleUrls: ['./video-upload.component.css']
+  styleUrls: ['./video-upload.component.css'],
+  standalone:false
 })
 
 export class VideoUploadComponent  {
