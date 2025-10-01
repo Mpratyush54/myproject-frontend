@@ -117,7 +117,9 @@ import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource,NgbPaginationModule } f
         LiveComponent,
         LiveJoinComponent,
     ],
-    bootstrap: [AppComponent], imports: [CKEditorModule,
+    bootstrap: [AppComponent], 
+    imports: [
+        CKEditorModule,
         MatFormFieldModule,
         MatProgressSpinnerModule,
         BrowserAnimationsModule,
