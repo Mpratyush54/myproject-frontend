@@ -14,7 +14,7 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 
 
 import {FormsModule , ReactiveFormsModule}from '@angular/forms';
-import {HttpClientModule, HTTP_INTERCEPTORS}from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi }from '@angular/common/http';
 import { HeaderDesktopComponent } from './nav/header-desktop/header-desktop.component';
 import { HeaderMobileComponent } from './nav/header-mobile/header-mobile.component';
 import { MenuSidebarComponent } from './nav/menu-sidebar/menu-sidebar.component';
@@ -73,87 +73,73 @@ import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource,NgbPaginationModule } f
 
 
 
-@NgModule({
-  declarations: [
-
-    AppComponent,
-    HeaderDesktopComponent,
-    HeaderMobileComponent,
-    MenuSidebarComponent,
-    LoginComponent,
-    LogoutComponent,
-    VideoComponent,
-    IndexComponent,
-    VideoUploadComponent,
-    VideoUploadFileComponent,
-    VideoPlayComponent,
-    VideoPlayActualComponent,
-    NotesComponent,
-    NotesAddComponent,
-    IndexStudentComponent,
-    StudentHeaderDesktopComponent,
-    StudentHeaderMobileComponent,
-    StudentMenuSidebarComponent,
-    PlayComponent,
-    IndexComponentvieo,
-    SomethingwentwrongComponent,
-    NotificationComponent,
-    NewNotificationComponent,
-    NgbdCarouselPause,
-    NotificationdetailsComponent,
-    IndexComponents,
-    CreateComponent,
-    JoinComponent,
-    IndexLiveComponent,
-    IndexComponentnotes,
-    NotesindvidualComponent,
-    PdfViewerComponent,
-    IndexComponentStudent,
-    EditstudentComponent,
-    FourZeroFourComponent,
-    SetingsComponent,
-    DownloadComponent,
-    ForgotPasswordComponent,
-    ResetComponent,
-    NgbdModalContent,
-    LiveComponent,
-    LiveJoinComponent,
-    
-  ],
-  imports: [
-    CKEditorModule,
-    MatFormFieldModule,
-    MatProgressSpinnerModule,
-BrowserAnimationsModule,
-MatProgressBarModule,
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    NgbCarousel,NgbPaginationModule,
-    SimplebarAngularModule,
-    NgxExtendedPdfViewerModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-      // Register the ServiceWorker as soon as the app is stable
-      // or after 30 seconds (whichever comes first).
-    }),
-     ServiceWorkerModule.register('ngsw-worker.js', {
-       enabled: environment.production,
-       // Register the ServiceWorker as soon as the app is stable
-       // or after 30 seconds (whichever comes first).
-       registrationStrategy: 'registerWhenStable:30000'
-     }),
-
-
-
-
-  ],
-  providers: [{provide:HTTP_INTERCEPTORS , useClass:IntersepterService , multi:true}
-  ],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        HeaderDesktopComponent,
+        HeaderMobileComponent,
+        MenuSidebarComponent,
+        LoginComponent,
+        LogoutComponent,
+        VideoComponent,
+        IndexComponent,
+        VideoUploadComponent,
+        VideoUploadFileComponent,
+        VideoPlayComponent,
+        VideoPlayActualComponent,
+        NotesComponent,
+        NotesAddComponent,
+        IndexStudentComponent,
+        StudentHeaderDesktopComponent,
+        StudentHeaderMobileComponent,
+        StudentMenuSidebarComponent,
+        PlayComponent,
+        IndexComponentvieo,
+        SomethingwentwrongComponent,
+        NotificationComponent,
+        NewNotificationComponent,
+        NgbdCarouselPause,
+        NotificationdetailsComponent,
+        IndexComponents,
+        CreateComponent,
+        JoinComponent,
+        IndexLiveComponent,
+        IndexComponentnotes,
+        NotesindvidualComponent,
+        PdfViewerComponent,
+        IndexComponentStudent,
+        EditstudentComponent,
+        FourZeroFourComponent,
+        SetingsComponent,
+        DownloadComponent,
+        ForgotPasswordComponent,
+        ResetComponent,
+        NgbdModalContent,
+        LiveComponent,
+        LiveJoinComponent,
+    ],
+    bootstrap: [AppComponent], imports: [CKEditorModule,
+        MatFormFieldModule,
+        MatProgressSpinnerModule,
+        BrowserAnimationsModule,
+        MatProgressBarModule,
+        BrowserModule,
+        AppRoutingModule,
+        NgbModule,
+        FormsModule,
+        ReactiveFormsModule,
+        NgbCarousel, NgbPaginationModule,
+        SimplebarAngularModule,
+        NgxExtendedPdfViewerModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+            enabled: environment.production,
+            // Register the ServiceWorker as soon as the app is stable
+            // or after 30 seconds (whichever comes first).
+        }),
+        ServiceWorkerModule.register('ngsw-worker.js', {
+            enabled: environment.production,
+            // Register the ServiceWorker as soon as the app is stable
+            // or after 30 seconds (whichever comes first).
+            registrationStrategy: 'registerWhenStable:30000'
+        })], providers: [{ provide: HTTP_INTERCEPTORS, useClass: IntersepterService, multi: true }, provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
 pdfDefaultOptions.assetsFolder = 'bleeding-edge';

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient ,HttpEventType } from '@angular/common/http';
+import { HttpClient, HttpEventType } from '@angular/common/http';
 
 import { environment } from '../../../environments/environment';
 import { StogageService } from 'src/app/services/stogage.service';
