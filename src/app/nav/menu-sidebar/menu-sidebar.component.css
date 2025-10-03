@@ -1,7 +1,109 @@
-li {
-    cursor: pointer;
-}
-.plyr--full-ui{
-    width: 437.5px!important;
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-}
+   :host {
+        font-family: 'Inter', sans-serif;
+        display: block;
+        height: 100%;
+      }
+
+      /* Sidebar container styles */
+      .sidebar {
+        width: 16rem; /* 256px */
+        height: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+      }
+
+      /* Header styles */
+      .sidebar-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+      }
+
+      .header-logo {
+        width: 2.5rem;
+        height: 2.5rem;
+        background-image: linear-gradient(to bottom right, #a855f7, #4f46e5);
+        border-radius: 0.5rem;
+        flex-shrink: 0;
+      }
+
+      .header-text h1 {
+        font-weight: 700;
+        color: #1f2937;
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
+      
+      .header-text p {
+        font-size: 0.75rem;
+        color: #6b7280;
+      }
+
+      /* Navigation styles */
+      .sidebar-nav {
+        flex-grow: 1;
+        overflow-y: auto; /* Add scroll for smaller screens */
+      }
+
+      .menu-heading {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #9ca3af;
+        text-transform: uppercase;
+        padding: 0.5rem 1rem;
+      }
+
+      .menu-heading.academic {
+        margin-top: 1.5rem;
+      }
+
+      .menu-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .menu-list > li + li {
+         margin-top: 0.25rem;
+      }
+
+      /* Menu item styles */
+      .menu-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.625rem 1rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        color: #4b5563;
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+      }
+
+      .menu-icon {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+
+      .menu-text {
+        font-weight: 500;
+        font-size: 0.875rem;
+      }
+
+      .menu-item:hover {
+        background-color: #f9fafb;
+        color: #111827;
+      }
+
+      .menu-item.active {
+        background-color: #f3f4f6;
+        color: #111827;
+        font-weight: 600;
+      }

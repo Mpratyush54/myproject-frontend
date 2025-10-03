@@ -1,14 +1,21 @@
-import { Component, ViewChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
   selector: 'app-desktop',
   templateUrl: './casual.component.html',
-  standalone:false
+  standalone:true,
+  imports:[
+    NgbCarousel,
+    CommonModule
+  ]
 
 })
-export class NgbdCarouselPause {
+export class NgbdCarouselPause  implements OnInit{
+  ngOnInit(): void {
+  }
   images = ['assets/images/slide1.jpg','assets/images/slide2.jpg' ,'assets/images/slide3.jpg'];
 
   paused = false;

@@ -7,16 +7,24 @@ import { LogoutService } from 'src/app/teacher/services/logout.service';
 import { NotificationService } from 'src/app/teacher/services/notification.service';
 import { StogageService } from 'src/app/services/stogage.service';
 import {LoaderService} from '../../loader/loader.service'
+import { CommonModule } from '@angular/common';
+import { AppModule } from 'src/app/app.module';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 @Component({
   selector: 'app-header-desktop',
   templateUrl: './header-desktop.component.html',
   styleUrls: ['./header-desktop.component.css'],
   providers: [LogoutService],
-  standalone:false
+  standalone:true,
+  imports:[
+    CommonModule,
+    MatProgressBarModule,
+
+  ]
 
 })
 export class HeaderDesktopComponent implements OnInit {
-
+search;
   constructor(private service :LogoutService , private Routes:Router , private notification:NotificationService ,private SwUpdate:SwUpdate ,    private swPush: SwPush,       private localstorage :StogageService ,public loaderservice:LoaderService  ) {
 
 

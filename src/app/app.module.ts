@@ -75,13 +75,7 @@ import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource,NgbPaginationModule } f
 
 @NgModule({ declarations: [
         AppComponent,
-        HeaderDesktopComponent,
-        HeaderMobileComponent,
-        MenuSidebarComponent,
-        LoginComponent,
-        LogoutComponent,
-        VideoComponent,
-        IndexComponent,
+
         VideoUploadComponent,
         VideoUploadFileComponent,
         VideoPlayComponent,
@@ -94,12 +88,9 @@ import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource,NgbPaginationModule } f
         StudentMenuSidebarComponent,
         PlayComponent,
         IndexComponentvieo,
-        SomethingwentwrongComponent,
         NotificationComponent,
         NewNotificationComponent,
-        NgbdCarouselPause,
         NotificationdetailsComponent,
-        IndexComponents,
         CreateComponent,
         JoinComponent,
         IndexLiveComponent,
@@ -108,40 +99,58 @@ import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource,NgbPaginationModule } f
         PdfViewerComponent,
         IndexComponentStudent,
         EditstudentComponent,
-        FourZeroFourComponent,
         SetingsComponent,
-        DownloadComponent,
         ForgotPasswordComponent,
         ResetComponent,
         NgbdModalContent,
         LiveComponent,
         LiveJoinComponent,
     ],
+    exports:[
+        HeaderDesktopComponent,
+        HeaderMobileComponent,
+        MenuSidebarComponent
+    
+    ],
     bootstrap: [AppComponent], 
     imports: [
-        CKEditorModule,
-        MatFormFieldModule,
-        MatProgressSpinnerModule,
-        BrowserAnimationsModule,
-        MatProgressBarModule,
-        BrowserModule,
-        AppRoutingModule,
-        NgbModule,
-        FormsModule,
-        ReactiveFormsModule,
-        NgbCarousel, NgbPaginationModule,
-        SimplebarAngularModule,
-        NgxExtendedPdfViewerModule,
-        ServiceWorkerModule.register('ngsw-worker.js', {
-            enabled: environment.production,
-            // Register the ServiceWorker as soon as the app is stable
-            // or after 30 seconds (whichever comes first).
-        }),
-        ServiceWorkerModule.register('ngsw-worker.js', {
-            enabled: environment.production,
-            // Register the ServiceWorker as soon as the app is stable
-            // or after 30 seconds (whichever comes first).
-            registrationStrategy: 'registerWhenStable:30000'
-        })], providers: [{ provide: HTTP_INTERCEPTORS, useClass: IntersepterService, multi: true }, provideHttpClient(withInterceptorsFromDi())] })
+    CKEditorModule,
+    FourZeroFourComponent,
+    DownloadComponent,
+    SomethingwentwrongComponent,
+    IndexComponent,
+    LoginComponent,
+    VideoComponent,
+    LogoutComponent,
+
+    MatFormFieldModule,
+        IndexComponents,
+        NgbdCarouselPause,
+    MatProgressSpinnerModule,
+    BrowserAnimationsModule,
+    MatProgressBarModule,
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgbCarousel, NgbPaginationModule,
+    SimplebarAngularModule,
+    NgxExtendedPdfViewerModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+        enabled: environment.production,
+        // Register the ServiceWorker as soon as the app is stable
+        // or after 30 seconds (whichever comes first).
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+        enabled: environment.production,
+        // Register the ServiceWorker as soon as the app is stable
+        // or after 30 seconds (whichever comes first).
+        registrationStrategy: 'registerWhenStable:30000'
+    }),
+    HeaderMobileComponent,
+    MenuSidebarComponent,
+    HeaderDesktopComponent
+], providers: [{ provide: HTTP_INTERCEPTORS, useClass: IntersepterService, multi: true }, provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
 pdfDefaultOptions.assetsFolder = 'bleeding-edge';

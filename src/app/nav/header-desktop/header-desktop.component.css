@@ -12,3 +12,97 @@
     width: 437.5px!important;
 
 }
+.header{
+  background-color: #ffffff; /* Grey background */
+  /* padding: 50px 10p//x; Some padding */
+  color: black;
+  text-align: center; /* Centered text */
+  font-size: 90px; /* Big font size */
+  font-weight: bold;
+  position: fixed; /* Fixed position - sit on top of the page */
+  top: 0;
+  left: 256px;
+  width: 100%; /* Full width */
+  transition: 0.4s; /* Add a transition effect (when scrolling - and font size is decreased) */
+  height: 50px;
+  
+}
+.flex-container{
+    display: flex;
+    flex-direction: row;
+      height: 50px;
+
+}
+.input{
+    display: flex;
+     color: #000000;
+    font-family: sans-serif;
+    font-weight: 100;
+    width: 60%;
+
+}
+.search{
+    line-height: 45px;
+    height: 50px;
+    font-size: 15px;
+    margin-left: 15px;
+    color: #000000;
+    font-family: 'Inter','sans-serif';
+    font-weight: 100;
+    width: 100%;
+}
+ ::placeholder {
+    font-family: 'Inter','sans-serif';
+    font-weight: 100;
+    color: hsl(240deg 1.64% 52.16%);
+
+}
+.profile{
+    
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    height: 45px;
+    align-items: center; 
+justify-content: flex-end; 
+    flex-wrap: wrap; 
+    width: 30%;
+        /* gap: 20px; Adds space between the bell and the profile picture */
+
+    
+}
+.notification{
+    width: calc(50% - 10px); 
+  box-sizing: border-box; 
+    color: hsl(240deg 1.64% 52.16%);
+    height: 45px;
+    font-size: 45px;
+
+}
+.profile-image{
+    display: flex;
+    padding: 3px;
+    /* border-radius: 100px; */
+   
+    width: calc(50% - 10px);
+  box-sizing: border-box; 
+
+}
+.profile-img-backdrop{
+    display: flex;
+    padding: 3px;
+ 
+    width: 45px;
+    height: 45px;
+    background-color: #e5e5e5;
+    
+
+}
+.profile-image-profile-img-backdrop>img{
+        /* height: 40px; */
+    border-radius: 100px;
+    /* border: #e5e5e5 5px; */
+border-width: 3px;
+border-color: #e5e5e5;
+}
+

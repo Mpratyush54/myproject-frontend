@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-download',
   templateUrl: './download.component.html',
   styleUrls: ['./download.component.css'],
-  standalone:false
+  standalone:true
 })
 export class DownloadComponent implements OnInit {
 

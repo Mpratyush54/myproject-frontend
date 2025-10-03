@@ -4,3 +4,21 @@
 
 @import '@angular/material/prebuilt-themes/pink-bluegrey.css';
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+/* In your parent component's stylesheet */
+.dashboard-layout {
+  display: flex;
+  /* height: 100vh; Makes the layout fill the entire screen height */
+  background-color: #f9fafb; /* Optional: Sets a background for the content area */
+}
+
+.main-content {
+  flex-grow: 1; /* This is the key: it makes the main content fill all available space */
+  padding: 2rem;
+  /* overflow-y: auto; Adds a scrollbar if the content becomes too long */
+}
+.main-content{
+  margin-top: 10px;
+}
+.center{
+  margin-top: 75px;
+}

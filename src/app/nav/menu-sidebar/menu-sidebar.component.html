@@ -1,41 +1,49 @@
-<aside class="menu-sidebar d-none d-lg-block ">
-    <div class="logo ">
-        <a href="# ">
-            <img src="assets/images/icon/logo.png " alt="Cool Admin " />
-        </a>
-    </div>
-    <div class="menu-sidebar__content js-scrollbar1 ">
-        <nav class="navbar-sidebar ">
-            <ul class="list-unstyled navbar__list ">
+    <aside class="sidebar">
+      <!-- Header Section -->
+      <div class="sidebar-header">
+        <div class="header-logo"></div>
+        <div class="header-text">
+          <h1>Cudemo</h1>
+          <p>Admin Education panel</p>
+        </div>
+      </div>
 
+      <!-- Navigation Menu -->
+      <nav class="sidebar-nav">
+        <!-- Main Menu Section -->
+        <h2 class="menu-heading">Main Menu</h2>
+        <ul class="menu-list">
+          @for (item of mainMenu; track item.name) {
+            <li>
+              <a
+                href="#"
+                (click)="$event.preventDefault(); setActiveItem(item.name,item.url)"
+                class="menu-item"
+                [class.active]="activeItem() === item.name"
+              >
+                <div class="menu-icon" [innerHTML]="item.icon"></div>
+                <span class="menu-text">{{ item.name }}</span>
+              </a>
+            </li>
+          }
+        </ul>
 
-
-
-                <li>
-                    <a (click)="teacherroute('teacher')">
-                        <i class="fas fa-tachometer-alt "></i>Dashboard</a>
-                </li>
-                <li>
-                    <a (click)="teacherroute('/teacher/videos')">
-                        <i class="fas fa-caret-square-o-right "></i>Videos</a>
-                </li>
-                <li>
-                    <a (click)="teacherroute('/teacher/notes')">
-                        <i class="fas fa-caret-square-o-right "></i>Notes</a>
-                </li>
-                <li>
-                    <a (click)="teacherroute('/teacher/notification')">
-                        <i class="fas fa-caret-square-o-right "></i>Send Notification</a>
-                </li>
-                <li>
-                    <a (click)="teacherroute('/teacher/live')">
-                        <i class="fas fa-caret-square-o-right "></i>Live Class</a>
-                </li>
-                <!-- <li>
-                    <a (click)="teacherroute('/teacher/student')">
-                        <i class="fas fa-caret-square-o-right "></i>Manage Students</a>
-                </li> -->
-            </ul>
-        </nav>
-    </div>
-</aside>
+        <!-- Academic Management Section -->
+        <h2 class="menu-heading academic">Academic Management</h2>
+        <ul class="menu-list">
+            @for (item of academicMenu; track item.name) {
+            <li>
+              <a
+                href="#"
+                (click)="$event.preventDefault(); setActiveItem(item.name,item.url)"
+                class="menu-item"
+                [class.active]="activeItem() === item.name"
+              >
+                <div class="menu-icon" [innerHTML]="item.icon"></div>
+                <span class="menu-text">{{ item.name }}</span>
+              </a>
+            </li>
+          }
+        </ul>
+      </nav>
+    </aside>

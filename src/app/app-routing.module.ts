@@ -1,14 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DownloadComponent } from './asset/download/download.component';
 import { ForgotPasswordComponent } from './asset/forgot-password/forgot-password.component';
 import { ResetComponent } from './asset/forgot-password/reset/reset.component';
-import { FourZeroFourComponent } from './asset/four-zero-four/four-zero-four.component';
-import { NgbdCarouselPause } from './asset/index/casual/casual.component';
-import { IndexComponents } from './asset/index/index.component';
-import { LoginComponent } from './asset/login/login.component';
-import { LogoutComponent } from './asset/logout/logout.component';
-import { SomethingwentwrongComponent } from './asset/somethingwentwrong/somethingwentwrong.component';
 import { IndexStudentComponent } from './student/index-student/index-student.component';
 import { LiveJoinComponent } from './student/live/live-join/live-join.component';
 import { LiveComponent } from './student/live/live.component';
@@ -19,7 +12,6 @@ import { StudentGuard } from './student/student.guard';
 import { IndexComponentvieo } from './student/video/index/index.component';
 import { PlayComponent } from './student/video/play/play.component';
 import { AuthGuard } from './teacher/auth.guard';
-import { IndexComponent } from './teacher/index/index.component';
 import { CreateComponent } from './teacher/live/create/create.component';
 import { IndexLiveComponent } from './teacher/live/index/index.component';
 import { NewNotificationComponent } from './teacher/new-notification/new-notification.component';
@@ -36,8 +28,16 @@ import { VideoUploadComponent } from './teacher/video-upload/video-upload.compon
 import { VideoComponent } from './teacher/video/video.component';
 
 const routes: Routes = [
-  {path: 'teacher' ,canActivate:[AuthGuard], component: IndexComponent },
-  {path: 'teacher/videos' ,canActivate:[AuthGuard], component: VideoComponent },
+  {
+    path: 'teacher' ,
+    canActivate:[AuthGuard],
+    loadComponent:()=> import('./teacher/index/index.component').then(m =>m.IndexComponent )
+   },
+  {
+    path: 'teacher/videos' ,
+    canActivate:[AuthGuard], 
+    loadComponent:()=>import('./teacher/video/video.component').then(m=>m.VideoComponent),
+   },
   {path: 'teacher/notes' ,canActivate:[AuthGuard], component: NotesComponent },
   {path: 'teacher/notes-add' ,canActivate:[AuthGuard], component: NotesAddComponent },
   {path: 'teacher/video-upload' ,canActivate:[AuthGuard], component: VideoUploadComponent },
@@ -51,11 +51,15 @@ const routes: Routes = [
   // {path: 'teacher/student' ,canActivate:[AuthGuard], component: IndexComponentStudent },
   // {path: 'teacher/student/edit/:id' ,canActivate:[AuthGuard], component: EditstudentComponent },
   // teacher/notification
-
+// home page of students 
   {path: 'student' ,canActivate:[StudentGuard],  component: IndexStudentComponent },
+// live page for students
   {path: 'student/live' ,canActivate:[StudentGuard],  component: LiveComponent },
+  // live joining page
   {path: 'student/live/:id' ,canActivate:[StudentGuard],  component: LiveJoinComponent },
+  // Settings page for students - under devlopment 
   {path: 'student/settings' ,canActivate:[StudentGuard],  component: SetingsComponent },
+  
   {path: 'student/videos' ,canActivate:[StudentGuard],  component: IndexComponentvieo },
   {path: 'student/notes' ,canActivate:[StudentGuard],  component: IndexComponentnotes },
   {path: 'student/notes/:id' ,canActivate:[StudentGuard],  component: NotesindvidualComponent },
@@ -63,14 +67,30 @@ const routes: Routes = [
 
 
 
-  {path: '' , component: IndexComponents },
+  {path: '' , 
+    loadComponent:()=>import('./asset/index/index.component').then(m=>m.IndexComponents)
+  },
   {path: 'forogot-password' , component: ForgotPasswordComponent },
   {path: 'forogot-password/:username/:hash' , component: ResetComponent },
-  {path: 'logout' , component: LogoutComponent },
-  {path: 'login' , component: LoginComponent },
-  {path: 'Something-went-wrong' , component: SomethingwentwrongComponent },
-  {path: 'download' , component: DownloadComponent },
-  {path: '**' , component: FourZeroFourComponent }
+  {
+    path: 'logout' , 
+    loadComponent:()=>import('./asset/logout/logout.component').then(m=>m.LogoutComponent),
+  },
+  {
+    path: 'login' ,
+    loadComponent:()=>import('./asset/login/login.component').then(m=>m.LoginComponent),
+     },
+  {path: 'Something-went-wrong' ,
+    loadComponent:()=>import('./asset/somethingwentwrong/somethingwentwrong.component').then(m=>m.SomethingwentwrongComponent),
+
+     },
+  {
+    path: 'download' , 
+    loadComponent:()=>import('./asset/download/download.component').then(m=>m.DownloadComponent),
+  },
+  {path: '**' , 
+    loadComponent:()=>import('./asset/four-zero-four/four-zero-four.component').then(m=>m.FourZeroFourComponent),
+     }
 
 ];
 

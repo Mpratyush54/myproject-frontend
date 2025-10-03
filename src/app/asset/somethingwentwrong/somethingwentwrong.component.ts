@@ -4,7 +4,8 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-somethingwentwrong',
   templateUrl: './somethingwentwrong.component.html',
   styleUrls: ['./somethingwentwrong.component.css'],
-  standalone:false
+  standalone:true,
+  
 })
 export class SomethingwentwrongComponent implements OnInit {
 

@@ -3,13 +3,23 @@ import { NgForm } from '@angular/forms';
 import { Router ,ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { VideofetchService } from '../services/videofetch.service';
+import { CommonModule } from '@angular/common';
+import { HeaderDesktopComponent } from 'src/app/nav/header-desktop/header-desktop.component';
+import { MenuSidebarComponent } from 'src/app/nav/menu-sidebar/menu-sidebar.component';
+import { HeaderMobileComponent } from 'src/app/nav/header-mobile/header-mobile.component';
 
 
 @Component({
   selector: 'app-video',
   templateUrl: './video.component.html',
   styleUrls: ['./video.component.css'],
-  standalone:false
+  standalone:true,
+  imports:[
+    CommonModule, // modules it uses
+    HeaderDesktopComponent,
+    MenuSidebarComponent,
+    HeaderMobileComponent
+  ]
 })
 export class VideoComponent implements OnInit {
   model: any;

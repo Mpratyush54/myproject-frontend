@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 // import  * as $  from 'jquery';
 import { Router } from '@angular/router';
@@ -6,7 +7,10 @@ import { Router } from '@angular/router';
   selector: 'app-header-mobile',
   templateUrl: './header-mobile.component.html',
   styleUrls: ['./header-mobile.component.css'],
-  standalone:false
+  standalone:true,
+  imports:[
+    CommonModule
+  ]
 })
 export class HeaderMobileComponent implements OnInit {
 
